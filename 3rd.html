@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blow the Candle 🎂</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#dff3d8;
+
+    font-family:"Comic Sans MS","Segoe UI",sans-serif;
+
+    overflow:hidden;
+
+    transition:background 1.5s ease;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.bg{
+    position:fixed;
+
+    border-radius:50%;
+
+    background:#c6e6bf;
+
+    opacity:.55;
+
+    z-index:0;
+}
+
+.bg1{
+    width:250px;
+    height:250px;
+
+    left:-90px;
+    top:-60px;
+}
+
+.bg2{
+    width:240px;
+    height:240px;
+
+    right:-90px;
+    bottom:-60px;
+}
+
+.star{
+    position:fixed;
+
+    color:#71886b;
+
+    font-size:25px;
+
+    z-index:1;
+}
+
+.star1{
+    top:12%;
+    left:8%;
+}
+
+.star2{
+    top:17%;
+    right:9%;
+}
+
+.star3{
+    bottom:14%;
+    left:10%;
+}
+
+.star4{
+    bottom:11%;
+    right:12%;
+}
+
+
+/* =========================
+   SCRAPBOOK
+========================= */
+
+.scrapbook{
+    position:relative;
+
+    z-index:2;
+
+    width:90%;
+    max-width:950px;
+
+    min-height:650px;
+
+    padding:65px 75px;
+
+    background:#edf7e8;
+
+    border:3px solid #657c61;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 11px 0 #b8ceb2,
+        0 22px 45px rgba(60,85,60,.20);
+
+    transition:
+        opacity 1.3s ease;
+}
+
+
+/* paper pieces */
+
+.paper{
+    position:absolute;
+
+    width:35px;
+    height:35px;
+
+    background:#fff9df;
+
+    border:2px solid #77745f;
+}
+
+.paper.one{
+    top:-13px;
+    left:80px;
+
+    transform:rotate(-8deg);
+}
+
+.paper.two{
+    top:-12px;
+    right:100px;
+
+    transform:rotate(9deg);
+}
+
+.paper.three{
+    bottom:-13px;
+    left:120px;
+
+    transform:rotate(8deg);
+}
+
+.paper.four{
+    bottom:-13px;
+    right:80px;
+
+    transform:rotate(-7deg);
+}
+
+
+/* =========================
+   NOTE
+========================= */
+
+.note{
+    position:absolute;
+
+    top:115px;
+    left:18px;
+
+    width:135px;
+
+    padding:15px 10px;
+
+    background:#fff9df;
+
+    border:1px solid #89836d;
+
+    color:#52634e;
+
+    text-align:center;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    box-shadow:
+        4px 5px 9px rgba(0,0,0,.14);
+
+    transform:rotate(-7deg);
+}
+
+
+/* =========================
+   BROWSER
+========================= */
+
+.browser{
+    width:100%;
+    max-width:660px;
+
+    margin:auto;
+
+    background:#fffef7;
+
+    border:2px solid #596653;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:
+        7px 9px 0 rgba(100,120,90,.20);
+}
+
+
+/* browser bar */
+
+.browser-top{
+    height:44px;
+
+    background:#d6e9d0;
+
+    border-bottom:2px solid #596653;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 13px;
+}
+
+.dot{
+    width:14px;
+    height:14px;
+
+    border-radius:50%;
+
+    margin-right:7px;
+
+    border:1px solid #596653;
+}
+
+.red{
+    background:#f1a5a5;
+}
+
+.yellow{
+    background:#f2d58e;
+}
+
+.green{
+    background:#9bc798;
+}
+
+.browser-title{
+    margin-left:auto;
+
+    color:#596653;
+
+    font-size:12px;
+}
+
+
+/* =========================
+   INSIDE
+========================= */
+
+.content{
+    position:relative;
+
+    min-height:475px;
+
+    padding:28px 20px;
+
+    text-align:center;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+
+/* heading */
+
+.small-heart{
+    color:#658061;
+
+    font-size:23px;
+
+    margin-bottom:2px;
+}
+
+h1{
+    margin:2px 0 4px;
+
+    color:#263c29;
+
+    font-size:30px;
+
+    font-weight:600;
+}
+
+.instruction{
+    color:#596653;
+
+    font-size:16px;
+
+    margin-top:2px;
+
+    margin-bottom:4px;
+}
+
+
+/* =========================
+   ANIMATED CAKE
+========================= */
+
+.cake-scene{
+    position:relative;
+
+    width:300px;
+    height:300px;
+
+    margin-top:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+}
+
+
+/* cake plate */
+
+.plate{
+    position:absolute;
+
+    width:235px;
+    height:25px;
+
+    bottom:25px;
+
+    background:#eadfce;
+
+    border:2px solid #8d8272;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 4px 0 #c9bdab;
+}
+
+
+/* lower cake */
+
+.cake-bottom{
+    position:absolute;
+
+    width:180px;
+    height:82px;
+
+    bottom:43px;
+
+    background:#f29b9e;
+
+    border:2px solid #9a5e63;
+
+    border-radius:7px 7px 15px 15px;
+
+    box-shadow:
+        0 7px 0 #c77b80;
+
+    animation:cakeMove 2s ease-in-out infinite;
+}
+
+
+/* cake stripes */
+
+.cake-bottom::before{
+    content:"";
+
+    position:absolute;
+
+    left:15px;
+    right:15px;
+
+    top:19px;
+
+    height:7px;
+
+    border-radius:10px;
+
+    background:#ffd4d0;
+
+    box-shadow:
+        0 25px 0 #ffd4d0;
+}
+
+
+/* cake hearts */
+
+.cake-bottom::after{
+    content:"♥   ♥   ♥";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    bottom:7px;
+
+    text-align:center;
+
+    color:#fff6ef;
+
+    font-size:16px;
+}
+
+
+/* top cream */
+
+.cream{
+    position:absolute;
+
+    width:192px;
+    height:40px;
+
+    bottom:110px;
+
+    background:#fff1da;
+
+    border:2px solid #a98876;
+
+    border-radius:50%;
+
+    z-index:3;
+}
+
+
+/* cream drip */
+
+.drip{
+    position:absolute;
+
+    width:25px;
+    height:22px;
+
+    bottom:-13px;
+
+    background:#fff1da;
+
+    border-bottom:2px solid #a98876;
+
+    border-radius:0 0 15px 15px;
+}
+
+.drip1{
+    left:24px;
+}
+
+.drip2{
+    left:82px;
+}
+
+.drip3{
+    right:25px;
+}
+
+
+/* =========================
+   CANDLE
+========================= */
+
+.candle{
+    position:absolute;
+
+    bottom:127px;
+
+    width:25px;
+    height:82px;
+
+    z-index:8;
+
+    border:2px solid #9b694d;
+
+    border-radius:5px;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #ef7077 0px,
+            #ef7077 10px,
+            #ffd0a6 10px,
+            #ffd0a6 19px
+        );
+
+    animation:candleMove 2s ease-in-out infinite;
+}
+
+
+/* wick */
+
+.wick{
+    position:absolute;
+
+    width:4px;
+    height:13px;
+
+    left:50%;
+    top:-14px;
+
+    transform:translateX(-50%);
+
+    background:#3c352f;
+
+    border-radius:3px;
+}
+
+
+/* =========================
+   FLAME
+========================= */
+
+.flame{
+    position:absolute;
+
+    width:48px;
+    height:65px;
+
+    left:50%;
+    top:-75px;
+
+    transform:translateX(-50%);
+
+    background:#f57b27;
+
+    border-radius:
+        50% 50%
+        50% 50%;
+
+    clip-path:polygon(
+        50% 0%,
+        75% 35%,
+        100% 55%,
+        85% 90%,
+        50% 100%,
+        15% 90%,
+        0% 55%,
+        25% 35%
+    );
+
+    filter:drop-shadow(
+        0 0 9px #ffae45
+    );
+
+    animation:flameMove .45s infinite alternate;
+}
+
+
+/* inner flame */
+
+.flame::after{
+    content:"";
+
+    position:absolute;
+
+    width:20px;
+    height:30px;
+
+    left:50%;
+    bottom:7px;
+
+    transform:translateX(-50%);
+
+    background:#ffd34d;
+
+    border-radius:50%;
+}
+
+
+/* flame animation */
+
+@keyframes flameMove{
+
+    from{
+        transform:
+            translateX(-50%)
+            scale(1)
+            rotate(-3deg);
+    }
+
+    to{
+        transform:
+            translateX(-50%)
+            scale(1.08)
+            rotate(3deg);
+    }
+}
+
+
+/* cake animation */
+
+@keyframes cakeMove{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-5px);
+    }
+}
+
+@keyframes candleMove{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-5px);
+    }
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+#countdown{
+
+    height:50px;
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    color:#314b32;
+
+    margin-top:-2px;
+}
+
+
+/* =========================
+   BLOW ANIMATION
+========================= */
+
+.flame.blow{
+
+    animation:blow .8s forwards;
+}
+
+@keyframes blow{
+
+    0%{
+        opacity:1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    30%{
+        opacity:.8;
+
+        transform:
+            translateX(15px)
+            scale(.9)
+            rotate(8deg);
+    }
+
+    65%{
+        opacity:.4;
+
+        transform:
+            translateX(45px)
+            scale(.55)
+            rotate(18deg);
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+            translateX(90px)
+            scale(.1)
+            rotate(30deg);
+    }
+}
+
+
+/* =========================
+   PAGE NUMBER
+========================= */
+
+.page-number{
+    position:absolute;
+
+    bottom:20px;
+
+    left:0;
+    right:0;
+
+    text-align:center;
+
+    color:#65755f;
+
+    font-size:12px;
+}
+
+
+/* =========================
+   DARK
+========================= */
+
+body.dark{
+    background:#000;
+}
+
+body.dark .scrapbook{
+    opacity:0;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .scrapbook{
+        width:94%;
+
+        min-height:610px;
+
+        padding:48px 10px;
+    }
+
+    .note{
+        display:none;
+    }
+
+    .content{
+        min-height:450px;
+
+        padding:24px 5px;
+    }
+
+    h1{
+        font-size:26px;
+    }
+
+    .cake-scene{
+        transform:scale(.82);
+
+        margin-top:-12px;
+
+        margin-bottom:-25px;
+    }
+
+    .paper{
+        display:none;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND -->
+
+<div class="bg bg1"></div>
+<div class="bg bg2"></div>
+
+<div class="star star1">♡</div>
+<div class="star star2">✦</div>
+<div class="star star3">♡</div>
+<div class="star star4">✧</div>
+
+
+<!-- SCRAPBOOK -->
+
+<div class="scrapbook">
+
+    <div class="paper one"></div>
+    <div class="paper two"></div>
+    <div class="paper three"></div>
+    <div class="paper four"></div>
+
+
+    <!-- NOTE -->
+
+    <div class="note">
+        Make a wish<br>
+        before the<br>
+        candle goes out ♡
+    </div>
+
+
+    <!-- BROWSER -->
+
+    <div class="browser">
+
+
+        <div class="browser-top">
+
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+
+            <div class="browser-title">
+                just for you ♡
+            </div>
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div class="content">
+
+
+            <div class="small-heart">
+                ♡
+            </div>
+
+
+            <h1>
+                Blow the candle
+            </h1>
+
+
+            <div class="instruction">
+                Make a wish ✨
+            </div>
+
+
+            <!-- =====================
+                 CAKE
+            ====================== -->
+
+            <div class="cake-scene">
+
+
+                <!-- plate -->
+
+                <div class="plate"></div>
+
+
+                <!-- cake -->
+
+                <div class="cake-bottom"></div>
+
+
+                <!-- cream -->
+
+                <div class="cream">
+
+                    <div class="drip drip1"></div>
+
+                    <div class="drip drip2"></div>
+
+                    <div class="drip drip3"></div>
+
+                </div>
+
+
+                <!-- candle -->
+
+                <div class="candle">
+
+                    <div class="wick"></div>
+
+                    <div
+                        class="flame"
+                        id="flame">
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- countdown -->
+
+            <div id="countdown"></div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="page-number">
+        ── ♡ PAGE 3 ♡ ──
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+let count = 3;
+
+const countdown =
+    document.getElementById("countdown");
+
+const flame =
+    document.getElementById("flame");
+
+
+/* Wait before starting */
+
+setTimeout(function(){
+
+    runCountdown();
+
+},1500);
+
+
+function runCountdown(){
+
+    countdown.innerHTML = count;
+
+
+    setTimeout(function(){
+
+        count--;
+
+
+        if(count > 0){
+
+            runCountdown();
+
+        }
+
+        else{
+
+            countdown.innerHTML = "💨";
+
+            blowCandle();
+
+        }
+
+    },1000);
+}
+
+
+/* =========================
+   BLOW CANDLE
+========================= */
+
+function blowCandle(){
+
+    flame.classList.add("blow");
+
+
+    setTimeout(function(){
+
+        /* screen becomes black */
+
+        document.body.classList.add("dark");
+
+
+        /* then automatically page 4 */
+
+        setTimeout(function(){
+
+            window.location.href = "4th.html";
+
+        },1500);
+
+
+    },800);
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday 🎂</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#dff3d8;
+
+    font-family:"Comic Sans MS","Segoe UI",sans-serif;
+
+    overflow:hidden;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.bg{
+    position:fixed;
+
+    border-radius:50%;
+
+    background:#c6e6bf;
+
+    opacity:.55;
+
+    z-index:0;
+}
+
+.bg1{
+    width:250px;
+    height:250px;
+
+    left:-90px;
+    top:-60px;
+}
+
+.bg2{
+    width:240px;
+    height:240px;
+
+    right:-90px;
+    bottom:-60px;
+}
+
+.star{
+    position:fixed;
+
+    color:#71886b;
+
+    font-size:25px;
+
+    z-index:1;
+}
+
+.star1{
+    top:12%;
+    left:8%;
+}
+
+.star2{
+    top:17%;
+    right:9%;
+}
+
+.star3{
+    bottom:14%;
+    left:10%;
+}
+
+.star4{
+    bottom:11%;
+    right:12%;
+}
+
+
+/* =========================
+   SCRAPBOOK
+========================= */
+
+.scrapbook{
+    position:relative;
+
+    z-index:2;
+
+    width:90%;
+    max-width:950px;
+
+    min-height:650px;
+
+    padding:65px 75px;
+
+    background:#edf7e8;
+
+    border:3px solid #657c61;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 11px 0 #b8ceb2,
+        0 22px 45px rgba(60,85,60,.20);
+}
+
+
+/* =========================
+   PAPER PIECES
+========================= */
+
+.paper{
+    position:absolute;
+
+    width:35px;
+    height:35px;
+
+    background:#fff9df;
+
+    border:2px solid #77745f;
+}
+
+.paper.one{
+    top:-13px;
+    left:80px;
+
+    transform:rotate(-8deg);
+}
+
+.paper.two{
+    top:-12px;
+    right:100px;
+
+    transform:rotate(9deg);
+}
+
+.paper.three{
+    bottom:-13px;
+    left:120px;
+
+    transform:rotate(8deg);
+}
+
+.paper.four{
+    bottom:-13px;
+    right:80px;
+
+    transform:rotate(-7deg);
+}
+
+
+/* =========================
+   NOTE
+========================= */
+
+.note{
+    position:absolute;
+
+    top:115px;
+    left:18px;
+
+    width:135px;
+
+    padding:15px 10px;
+
+    background:#fff9df;
+
+    border:1px solid #89836d;
+
+    color:#52634e;
+
+    text-align:center;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    box-shadow:
+        4px 5px 9px rgba(0,0,0,.14);
+
+    transform:rotate(-7deg);
+}
+
+
+/* =========================
+   BROWSER
+========================= */
+
+.browser{
+    width:100%;
+    max-width:660px;
+
+    margin:auto;
+
+    background:#fffef7;
+
+    border:2px solid #596653;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:
+        7px 9px 0 rgba(100,120,90,.20);
+}
+
+
+/* =========================
+   BROWSER TOP
+========================= */
+
+.browser-top{
+    height:44px;
+
+    background:#d6e9d0;
+
+    border-bottom:2px solid #596653;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 13px;
+}
+
+.dot{
+    width:14px;
+    height:14px;
+
+    border-radius:50%;
+
+    margin-right:7px;
+
+    border:1px solid #596653;
+}
+
+.red{
+    background:#f1a5a5;
+}
+
+.yellow{
+    background:#f2d58e;
+}
+
+.green{
+    background:#9bc798;
+}
+
+.browser-title{
+    margin-left:auto;
+
+    color:#596653;
+
+    font-size:12px;
+}
+
+
+/* =========================
+   INSIDE CONTENT
+========================= */
+
+.content{
+    position:relative;
+
+    min-height:475px;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.small-heart{
+    color:#658061;
+
+    font-size:23px;
+
+    margin-bottom:5px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+h1{
+    margin:2px 0 20px;
+
+    color:#263c29;
+
+    font-size:30px;
+
+    font-weight:600;
+
+    line-height:1.3;
+}
+
+
+/* =========================
+   ROSES
+========================= */
+
+.roses{
+    font-size:25px;
+
+    color:#71886b;
+
+    letter-spacing:5px;
+
+    margin-bottom:20px;
+}
+
+
+/* =========================
+   MESSAGE BOX
+========================= */
+
+.message-box{
+
+    width:100%;
+
+    max-width:520px;
+
+    padding:25px 28px;
+
+    background:#f8f3df;
+
+    border:2px solid #8a8b72;
+
+    border-radius:12px;
+
+    box-shadow:
+        4px 5px 0 rgba(100,120,90,.16);
+
+    text-align:left;
+}
+
+
+/* =========================
+   YOUR PARAGRAPH
+========================= */
+
+.message-box p{
+
+    margin:0;
+
+    color:#52634e;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    min-height:180px;
+}
+
+
+/* =========================
+   PAGE NUMBER
+========================= */
+
+.page-number{
+    position:absolute;
+
+    bottom:20px;
+
+    left:0;
+    right:0;
+
+    text-align:center;
+
+    color:#65755f;
+
+    font-size:12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .scrapbook{
+        width:94%;
+
+        min-height:610px;
+
+        padding:48px 10px;
+    }
+
+    .note{
+        display:none;
+    }
+
+    .content{
+        min-height:450px;
+
+        padding:30px 10px;
+    }
+
+    h1{
+        font-size:26px;
+
+        margin-bottom:15px;
+    }
+
+    .roses{
+        font-size:21px;
+
+        margin-bottom:15px;
+    }
+
+    .message-box{
+        padding:20px 18px;
+
+        max-width:95%;
+    }
+
+    .message-box p{
+        font-size:14px;
+
+        line-height:1.7;
+
+        min-height:200px;
+    }
+
+    .paper{
+        display:none;
+    }
+}
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+.continue-btn{
+
+    margin-top:22px;
+
+    padding:11px 28px;
+
+    background:#d6e9d0;
+
+    color:#52634e;
+
+    border:2px solid #657c61;
+
+    border-radius:25px;
+
+    font-family:"Comic Sans MS","Segoe UI",sans-serif;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 4px 0 #b8ceb2;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.continue-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 6px 0 #b8ceb2;
+}
+
+.continue-btn:active{
+
+    transform:translateY(2px);
+
+    box-shadow:
+        0 2px 0 #b8ceb2;
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     BACKGROUND
+========================= -->
+
+<div class="bg bg1"></div>
+
+<div class="bg bg2"></div>
+
+<div class="star star1">♡</div>
+
+<div class="star star2">✦</div>
+
+<div class="star star3">♡</div>
+
+<div class="star star4">✧</div>
+
+
+<!-- =========================
+     SCRAPBOOK
+========================= -->
+
+<div class="scrapbook">
+
+
+    <!-- PAPER PIECES -->
+
+    <div class="paper one"></div>
+
+    <div class="paper two"></div>
+
+    <div class="paper three"></div>
+
+    <div class="paper four"></div>
+
+
+    <!-- =========================
+         SIDE NOTE
+    ========================= -->
+
+    <div class="note">
+
+        A little message<br>
+        just for you ♡
+
+    </div>
+
+
+    <!-- =========================
+         BROWSER
+    ========================= -->
+
+    <div class="browser">
+
+
+        <!-- BROWSER TOP -->
+
+        <div class="browser-top">
+
+            <div class="dot red"></div>
+
+            <div class="dot yellow"></div>
+
+            <div class="dot green"></div>
+
+
+            <div class="browser-title">
+
+                just for you ♡
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             CONTENT
+        ========================= -->
+
+        <div class="content">
+
+
+            <!-- HEART -->
+
+            <div class="small-heart">
+
+                ♡
+
+            </div>
+
+
+            <!-- HEADING -->
+
+            <h1>
+
+                Happy Birthday 🤍
+
+            </h1>
+
+
+            <!-- ROSES -->
+
+            <div class="roses">
+
+                🌹 🌿 🌹
+
+            </div>
+
+
+            <!-- =========================
+                 MESSAGE BOX
+            ========================= -->
+
+            <div class="message-box">
+
+
+                <!--
+                    WRITE YOUR LONG
+                    BIRTHDAY MESSAGE HERE
+                -->
+
+                <p>
+
+                    October was already a beautiful month, but it has always felt a little more special
+                    because its your month.🍁
+                    Happy Birthday. I genuinely hope this year brings uh peace, happiness,and 
+                    everything you deserve. Take care.🤍
+                    
+                    Maybe October will always remind me of you.🍂
+                </p>
+
+
+            </div>
+
+            <button class="continue-btn" onclick="window.location.href='5th.html'">
+    Continue →
+</button>
+            
+        
+
+        
+
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         PAGE NUMBER
+    ========================= -->
+
+    <div class="page-number">
+
+        ── ♡ PAGE 4 of 6 ♡ ──
+
+    </div>
+
+
+</div>
+
+
+
+</body>
+</html>
